@@ -1,0 +1,122 @@
+<!DOCTYPE html class="msie">
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트 시간</title>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="../../assets/css/common.css">
+  <link rel='stylesheet' type='text/css' href='event1.css'>
+  <script src="../../js/libs/jquery-1.9.1.js"></script>
+  <script src="../../js/libs/swiper.min.js"></script>
+  <script src="../../js/libs/jquery.selectric.min.js"></script>
+  <script src="../../js/common_ui.js"></script>
+  <script src='https://kim-j-s.github.io/rpa/dist/js/moment.js'></script>
+<script src='https://kim-j-s.github.io/rpa/dist/js/moment-timezone-with-data.js'></script>
+</head>
+
+
+  <body>
+    <div id="wrap">
+      <!-- header -->
+<header>
+  header
+</header>
+<!-- header -->
+
+      <!-- main -->
+      <main class="container">
+
+        <div class="content-inner">
+
+          <div class="frame" data-s="이벤트 시작일 : 2021-12-10" data-e="이벤트 종료일 : 2021-12-20">
+            <span class="rtMark">
+              <span class="remain">남은 시간 : <span class="rt"></span></span>
+            </span>
+          </div>
+
+          <div class="val">
+            <p>Start : <span class="s"></span></p>
+            <p>End : <span class="e"></span></p>
+            <p>Now : <span class="n"></span></p>
+
+            <p>시작시간 : <span class="st"></span></p>
+            <p>종료시간 : <span class="et"></span></p>
+            <p>현재시간 : <span class="nt"></span></p>
+            <p>이벤트 기간 : <span class="lt"></span></p>
+            <p>이벤트 잔여시간 : <span class="ct"></span></p>
+            <p>이벤트 계산 : <span class="cc"></span></p>
+            <p>이벤트 퍼센트 : <span class="pt"></span></p>
+            <p>잔류 퍼센트 : <span class="per"></span></p>
+          </div>
+
+
+        </div>
+      </main>
+      <!-- main -->
+
+      <!-- footer -->
+<footer>
+  footer
+</footer>
+<!-- footer -->
+    </div>
+</body>
+
+
+<script>
+  var update = function() {
+
+    // 년, 월, 일, 시, 분, 초를 받는다
+    // 이벤트 종료일을 받는다.
+    eventTime = new Date(2021, 11, 20, 0, 0, 0, 0);
+    // 이벤트 시작일을 받는다
+    startTime = new Date(2021, 11, 10, 0, 0, 0, 0);
+    // 현재 시간을 받는다
+    currentTime = new Date();
+
+    // 이벤트 기간을 계산
+    var eventPeriod = eventTime.getTime() - startTime.getTime();
+    // 이벤트 잔여시간
+    var eventLeft = eventTime.getTime() - currentTime.getTime();
+    // 이벤트 잔여시간을 전체기간에서 퍼센트로 계산
+    var eventPer = (eventLeft / eventPeriod) * 100;
+    $('.s').text(startTime);
+    $('.e').text(eventTime);
+    $('.n').text(currentTime);
+    $('.st').text(startTime.getTime());
+    $('.et').text(eventTime.getTime());
+    $('.nt').text(currentTime.getTime());
+    $('.lt').text(eventPeriod);
+    $('.ct').text(eventLeft);
+    $('.cc').text(eventLeft - eventPeriod);
+    $('.pt').text(eventPer);
+    $('.per').text(Math.round(eventPer));
+
+    $('.rtMark').css('left', (100 - eventPer) + '%');
+
+
+
+    // 잔류 기간
+
+    var days = Math.floor(eventLeft / (1000 * 60 * 60 * 24)); 
+    var hours = Math.floor((eventLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((eventLeft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((eventLeft % (1000 * 60)) / 1000);
+
+    $('.rt').text(days + "일 " + hours + "시간 " + minutes + "분 " + seconds + "초");
+
+  };
+
+  $(function() {
+    update();
+    setInterval(update, 1000);
+  });
+</script>
+
+
+
+
+</html>

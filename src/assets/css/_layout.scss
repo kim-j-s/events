@@ -1,3 +1,40 @@
 /* layout */
 
+/* header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #000;
+}
+/* header */
+
+
+/* footer */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  margin-top: 20px;
+  color: #fff;
+  background: #222;
+}
+/* footer */
+
+
+/* container */
+.container {
+  padding: 20px 0;
+}
+/* container */
+
+
+.content-inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+
 /* layout */

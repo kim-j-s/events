@@ -7,7 +7,8 @@ module.exports = {
 		root: "./",
 		src: {
 			base: "./src",
-			css: "./src/assets/css",
+			//css: "./src/assets/css",
+			css: "./src",
 			js: "./src/js",
 			img: "./src/assets/images",
 			includeHtml: './src/html/include_html',
@@ -16,7 +17,8 @@ module.exports = {
 		},
 		dist: {
 			base: "./dist",
-			css: "./dist/assets/css",
+			//css: "./dist/assets/css",
+			css: "./dist",
 			js: "./dist/js",
 			img: "./dist/assets/images",
 			guide: './dist/guide',

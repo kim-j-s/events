@@ -1,0 +1,55 @@
+.frame {
+	position: relative;
+	height: 200px;
+	border: 1px solid #000;
+	&::before {
+		content: attr(data-s);
+		position: absolute;
+		left: 0;
+		bottom: -30px;
+	}
+	&::after {
+		content: attr(data-e);
+		position: absolute;
+		right: 0;
+		bottom: -30px;
+	}
+}
+
+.rtMark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	border-left: 2px solid #222;
+	&:before {
+		content: '';
+		position: absolute;
+		top: -15px;
+		left: 0;
+		width: 10px;
+		border-top: 10px solid #000;
+		border-right: 10px solid transparent;
+	}
+	> .remain {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		white-space: nowrap;
+	}
+}
+
+.val {
+	margin-top: 50px;
+	padding: 20px;
+	border: 1px solid #000;
+	> p {
+		+ p {
+			margin-top: 10px;
+		}
+		> span {
+			font-weight: 700;
+			font-size: 20px;
+		} 
+	}
+}

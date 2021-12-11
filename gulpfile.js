@@ -88,7 +88,10 @@ function devGuideImages() {
 }
 
 function devStyles() {
-  return src(`${options.paths.src.css}/**/*.*`)
+  return src([
+      `${options.paths.src.css}/**/*.css`,
+      `${options.paths.src.css}/**/*.scss`,
+    ])
     .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(dest(options.paths.dist.css));
