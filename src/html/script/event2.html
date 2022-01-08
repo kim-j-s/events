@@ -1,0 +1,59 @@
+@@include("_head.html",{
+  "title" : "Event | HOME",
+  "css" : "<link rel='stylesheet' type='text/css' href='event2.css'>",
+  "js" : "",
+})
+  <body>
+    <div id="wrap">
+      @@include("_header.html")
+
+      <!-- main -->
+      <main class="container">
+        <div class="inner">
+          <h2 class="g-title">소수점 인풋 </h2>
+          <div class="cont">
+            <input type="text" class="inp onlyNumber">
+          </div>
+        </div>
+
+
+
+      </main>
+      <!-- main -->
+
+      @@include("_footer.html")
+    </div>
+
+    
+    
+    <script>
+      $(".inp.onlyNumber").on('keypress', function (event) {
+
+        var v = $(this).val();
+        var regx = new RegExp(/(-?\d+)(\d{3})/);
+            var bExists = v.indexOf(".", 0);
+            var strArr = v.split('.');
+            while (regx.test(strArr[0])) {
+                strArr[0] = strArr[0].replace(regx, "$1,$2");
+            }
+            if (bExists > -1) {
+                v = strArr[0] + "." + strArr[1];
+            } else {
+                v = strArr[0];
+            }
+        $(this).val(v);
+
+        if ( (event.which >= 48 && event.which <= 57) || event.which == 8 || event.which == 9 || event.which == 46 ) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      
+    </script>
+
+
+
+
+</body>
+</html>
