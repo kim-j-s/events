@@ -1,0 +1,169 @@
+body {
+  padding: 20px;
+  background: #202020;
+}
+
+.wave-box-cont {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 -5px;
+}
+
+.wave-box {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 0%;
+      -ms-flex: 1 1 0%;
+          flex: 1 1 0%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 5px;
+}
+
+.wave-box--effect {
+  position: relative;
+  /* border: 1px solid #202020; */
+  border-radius: 50%;
+  /*
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			
+		}
+		*/
+}
+
+.wave-box--effect::after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+
+.wave-box--effect > .wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.wave-box--effect > .wave .waves {
+  position: absolute;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  -webkit-transform: translate(-50%, -75%);
+      -ms-transform: translate(-50%, -75%);
+          transform: translate(-50%, -75%);
+}
+
+.wave-box--effect > .wave .waves-f {
+  top: 0;
+  z-index: 1;
+  border-radius: 50%;
+  background: #202020;
+  -webkit-animation: wave 10s linear infinite;
+          animation: wave 10s linear infinite;
+}
+
+.wave-box--effect > .wave .waves-b {
+  top: 0;
+  border-radius: 30%;
+  background: #202020;
+  opacity: 0.5;
+  -webkit-animation: wave 10s linear infinite;
+          animation: wave 10s linear infinite;
+}
+
+.wave-box--effect > .wave.type1 {
+  background: #5aad8b;
+  background: -webkit-gradient(linear, left bottom, left top, from(#5aad8b), to(#f2f2f2));
+  background: -webkit-linear-gradient(bottom, #5aad8b 0%, #f2f2f2 100%);
+  background: linear-gradient(0deg, #5aad8b 0%, #f2f2f2 100%);
+}
+
+.wave-box--effect > .wave.type2 {
+  background: #ae9a37;
+  background: -webkit-gradient(linear, left bottom, left top, from(#ae9a37), to(#f2f2f2));
+  background: -webkit-linear-gradient(bottom, #ae9a37 0%, #f2f2f2 100%);
+  background: linear-gradient(0deg, #ae9a37 0%, #f2f2f2 100%);
+}
+
+.wave-box--effect > .wave.type3 {
+  background: #3434ae;
+  background: -webkit-gradient(linear, left bottom, left top, from(#3434ae), to(#f2f2f2));
+  background: -webkit-linear-gradient(bottom, #3434ae 0%, #f2f2f2 100%);
+  background: linear-gradient(0deg, #3434ae 0%, #f2f2f2 100%);
+}
+
+.wave-box--effect > .wave.type4 {
+  background: #a7448b;
+  background: -webkit-gradient(linear, left bottom, left top, from(#a7448b), to(#f2f2f2));
+  background: -webkit-linear-gradient(bottom, #a7448b 0%, #f2f2f2 100%);
+  background: linear-gradient(0deg, #a7448b 0%, #f2f2f2 100%);
+}
+
+.wave-box--effect > .per {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.wave-box > p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  /* white-space: nowrap; */
+}
+
+.wave-box + .wave-box {
+  margin-left: 5px;
+}
+
+@-webkit-keyframes wave {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -100%) rotate(360deg);
+            transform: translate(-50%, -100%) rotate(360deg);
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes wave {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -100%) rotate(360deg);
+            transform: translate(-50%, -100%) rotate(360deg);
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+}

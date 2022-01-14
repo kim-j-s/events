@@ -1,0 +1,119 @@
+body {
+	padding: 20px;
+	background: #202020;
+}
+
+
+
+.wave-box-cont {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 -5px;
+
+}
+
+.wave-box {
+	position: relative;
+	flex: 1 1 0%;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 5px;
+	&--effect {
+		position: relative;
+		/* border: 1px solid #202020; */
+		border-radius: 50%;
+		/*
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			
+		}
+		*/
+		&::after {
+			content: '';
+			display: block;
+			padding-bottom: 100%;
+		}
+		> .wave {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			overflow: hidden;
+			.waves {
+				position: absolute;
+				left: 50%;
+				width: 200%;
+				height: 200%;
+				transform: translate(-50%, -75%);
+				&-f {
+					top: 0;
+					z-index: 1;
+					border-radius: 50%;
+					background: #202020;
+					animation: wave 10s linear infinite;
+				}
+				&-b {
+					top: 0;
+					border-radius: 30%;
+					background: #202020;
+					opacity: 0.5;
+					animation: wave 10s linear infinite;
+				}
+			}
+			&.type1 {
+				background: rgb(90,173,139);
+				background: linear-gradient(0deg, rgba(90,173,139,1) 0%, rgba(242,242,242,1) 100%);
+			}
+			&.type2 {
+				background: rgb(174,154,55);
+				background: linear-gradient(0deg, rgba(174,154,55,1) 0%, rgba(242,242,242,1) 100%);
+			}
+			&.type3 {
+				background: rgb(52,52,174);
+				background: linear-gradient(0deg, rgba(52,52,174,1) 0%, rgba(242,242,242,1) 100%);
+			}
+			&.type4 {
+				background: rgb(167,68,139);
+				background: linear-gradient(0deg, rgba(167,68,139,1) 0%, rgba(242,242,242,1) 100%);
+			}
+		}
+		> .per {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 1;
+			transform: translate(-50%, -50%);
+			color: #fff;
+		}
+	}
+	> p {
+		margin-top: 6px;
+		font-size: 14px;
+		color: #fff;
+		text-align: center;
+		/* white-space: nowrap; */
+	}
+	& + & {
+		margin-left: 5px;
+	}
+}
+
+
+
+@keyframes wave {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -100%) rotate(360deg);
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+    100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
