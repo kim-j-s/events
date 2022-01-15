@@ -1,6 +1,11 @@
 body {
 	padding: 20px;
-	background: #202020;
+	background: #141414;
+}
+
+.container {
+	width: 1600px;
+	margin: 0 auto;
 }
 
 
@@ -8,7 +13,7 @@ body {
 .wave-box-cont {
 	display: flex;
 	justify-content: space-between;
-	margin: 0 -5px;
+	margin: 0 -10px;
 }
 
 .wave-box {
@@ -16,9 +21,15 @@ body {
 	flex: 1 1 0%;
 	display: inline-block;
 	vertical-align: top;
-	margin: 0 5px;
+	margin: 0 10px;
+	padding: 30px 40px;
+	border-radius: 10px;
+	background: #202020;
 	&--effect {
 		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		width: 100px;
 		overflow: hidden;
 		
 		&::after {
@@ -91,13 +102,11 @@ body {
 		}
 	}
 	> p {
-		margin-top: 6px;
-		font-size: 14px;
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 30px;
+		font-size: 20px;
 		color: #fff;
-		text-align: center;
-	}
-	& + & {
-		margin-left: 5px;
 	}
 }
 
