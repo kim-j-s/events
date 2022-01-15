@@ -39,8 +39,6 @@ body {
 
 .wave-box--effect {
   position: relative;
-  /* border: 1px solid #202020; */
-  /* border-radius: 50%; */
   overflow: hidden;
 }
 
@@ -89,16 +87,16 @@ body {
   z-index: 1;
   border-radius: 45%;
   background: #202020;
-  -webkit-animation: wave 10s linear infinite forwards;
-          animation: wave 10s linear infinite forwards;
+  -webkit-animation: wave 20s linear infinite forwards;
+          animation: wave 20s linear infinite forwards;
 }
 
 .wave-box--effect > .wave .waves-b {
   border-radius: 35%;
   background: #202020;
   opacity: 0.5;
-  -webkit-animation: wave 10s linear infinite forwards;
-          animation: wave 10s linear infinite forwards;
+  -webkit-animation: wave 20s linear infinite forwards;
+          animation: wave 20s linear infinite forwards;
 }
 
 .wave-box--effect > .wave.type1 {

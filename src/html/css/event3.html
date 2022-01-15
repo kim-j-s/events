@@ -12,7 +12,7 @@
 
         <div class="wave-box-cont">
           <div class="wave-box">
-            <div class="wave-box--effect" data-per="90">
+            <div class="wave-box--effect" data-per="100">
               <div class="wave type1">
                 <span class="waves waves-f"></span>
                 <span class="waves waves-b"></span>
@@ -22,7 +22,7 @@
             <p>하나님 중심</p>
           </div>
           <div class="wave-box">
-            <div class="wave-box--effect" data-per="20">
+            <div class="wave-box--effect" data-per="90">
               <div class="wave type2">
                 <span class="waves waves-f"></span>
                 <span class="waves waves-b"></span>
@@ -32,7 +32,7 @@
             <p>공통체</p>
           </div>
           <div class="wave-box">
-            <div class="wave-box--effect" data-per="70">
+            <div class="wave-box--effect" data-per="80">
               <div class="wave type3">
                 <span class="waves waves-f"></span>
                 <span class="waves waves-b"></span>
@@ -42,7 +42,93 @@
             <p>자아의 훈련</p>
           </div>
           <div class="wave-box">
+            <div class="wave-box--effect" data-per="70">
+              <div class="wave type4">
+                <span class="waves waves-f"></span>
+                <span class="waves waves-b"></span>
+              </div>
+              <span class="per"></span>
+            </div>
+            <p>타인과 세상</p>
+          </div>
+        </div>
+
+        <div class="wave-box-cont">
+          <div class="wave-box">
+            <div class="wave-box--effect" data-per="60">
+              <div class="wave type1">
+                <span class="waves waves-f"></span>
+                <span class="waves waves-b"></span>
+              </div>
+              <span class="per"></span>
+            </div>
+            <p>하나님 중심</p>
+          </div>
+          <div class="wave-box">
             <div class="wave-box--effect" data-per="50">
+              <div class="wave type2">
+                <span class="waves waves-f"></span>
+                <span class="waves waves-b"></span>
+              </div>
+              <span class="per"></span>
+            </div>
+            <p>공통체</p>
+          </div>
+          <div class="wave-box">
+            <div class="wave-box--effect" data-per="40">
+              <div class="wave type3">
+                <span class="waves waves-f"></span>
+                <span class="waves waves-b"></span>
+              </div>
+              <span class="per"></span>
+            </div>
+            <p>자아의 훈련</p>
+          </div>
+          <div class="wave-box">
+            <div class="wave-box--effect" data-per="30">
+              <div class="wave type4">
+                <span class="waves waves-f"></span>
+                <span class="waves waves-b"></span>
+              </div>
+              <span class="per"></span>
+            </div>
+            <p>타인과 세상</p>
+          </div>
+        </div>
+
+        <div class="wave-box-cont">
+          <div class="wave-box">
+            <div class="wave-box--effect" data-per="20">
+              <div class="wave type1">
+                <span class="waves waves-f"></span>
+                <span class="waves waves-b"></span>
+              </div>
+              <span class="per"></span>
+            </div>
+            <p>하나님 중심</p>
+          </div>
+          <div class="wave-box">
+            <div class="wave-box--effect" data-per="10">
+              <div class="wave type2">
+                <span class="waves waves-f"></span>
+                <span class="waves waves-b"></span>
+              </div>
+              <span class="per"></span>
+            </div>
+            <p>공통체</p>
+          </div>
+          <div class="wave-box">
+            <div class="wave-box--effect" data-per="5">
+              <div class="wave type3">
+                <span class="waves waves-f"></span>
+                <span class="waves waves-b"></span>
+              </div>
+              <span class="per"></span>
+            </div>
+            <p>자아의 훈련</p>
+          </div>
+          <div class="wave-box">
+            <div class="wave-box--effect" data-per="0">
               <div class="wave type4">
                 <span class="waves waves-f"></span>
                 <span class="waves waves-b"></span>
@@ -63,7 +149,7 @@
   $(window).load(function(){
     $('.wave-box--effect').each(function(){
       var $per = $(this).attr('data-per');
-      $(this).find('.waves').css('top',-$per+'%');
+      $(this).find('.waves').css('top',-(Number($per))+'%');
       
       $(this).prop('Counter',0).animate({
         Counter: $(this).data('per')

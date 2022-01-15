@@ -9,7 +9,6 @@ body {
 	display: flex;
 	justify-content: space-between;
 	margin: 0 -5px;
-
 }
 
 .wave-box {
@@ -20,8 +19,6 @@ body {
 	margin: 0 5px;
 	&--effect {
 		position: relative;
-		/* border: 1px solid #202020; */
-		/* border-radius: 50%; */
 		overflow: hidden;
 		
 		&::after {
@@ -59,13 +56,13 @@ body {
 					z-index: 1;
 					border-radius: 45%;
 					background: #202020;
-					animation: wave 10s linear infinite forwards;
+					animation: wave 20s linear infinite forwards;
 				}
 				&-b {
 					border-radius: 35%;
 					background: #202020;					
 					opacity: 0.5;
-					animation: wave 10s linear infinite forwards;
+					animation: wave 20s linear infinite forwards;
 				}
 			}
 			&.type1 {
