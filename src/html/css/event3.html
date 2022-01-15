@@ -62,11 +62,22 @@
 <script>
   $(window).load(function(){
     $('.wave-box--effect').each(function(){
-      var per = $(this).attr('data-per');
-      $(this).find('.per').text(per);
-      $(this).find('.waves').css('top',-per+'%');
+      var $per = $(this).attr('data-per');
+      $(this).find('.waves').css('top',-$per+'%');
+      
+      $(this).prop('Counter',0).animate({
+        Counter: $(this).data('per')
+      }, {
+        duration: 1500,
+        easing: 'linear',
+        step: function (now) {
+          $(this).find('.per').text(Math.floor(now));
+        }
+      });
+
     });
   });
+
 </script>
 
 
