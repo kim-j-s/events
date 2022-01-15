@@ -17,7 +17,7 @@
                 <span class="waves waves-f"></span>
                 <span class="waves waves-b"></span>
               </div>
-              <span class="per">90</span>
+              <span class="per"></span>
             </div>
             <p>하나님 중심</p>
           </div>
@@ -27,7 +27,7 @@
                 <span class="waves waves-f"></span>
                 <span class="waves waves-b"></span>
               </div>
-              <span class="per">20</span>
+              <span class="per"></span>
             </div>
             <p>공통체</p>
           </div>
@@ -37,7 +37,7 @@
                 <span class="waves waves-f"></span>
                 <span class="waves waves-b"></span>
               </div>
-              <span class="per">70</span>
+              <span class="per"></span>
             </div>
             <p>자아의 훈련</p>
           </div>
@@ -47,7 +47,7 @@
                 <span class="waves waves-f"></span>
                 <span class="waves waves-b"></span>
               </div>
-              <span class="per">50</span>
+              <span class="per"></span>
             </div>
             <p>타인과 세상</p>
           </div>
@@ -57,5 +57,18 @@
       <!-- main -->
 
     </div>
+
+
+<script>
+  $(window).load(function(){
+    $('.wave-box--effect').each(function(){
+      var per = $(this).attr('data-per');
+      $(this).find('.per').text(per);
+      $(this).find('.waves').css('top',-per+'%');
+    });
+  });
+</script>
+
+
 </body>
 </html>
