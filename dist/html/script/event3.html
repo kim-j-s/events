@@ -1,20 +1,37 @@
-@@include("_head.html",{
-  "title" : "이벤트 시간",
-  "css" : "<link rel='stylesheet' type='text/css' href='event1.css'>",
-  "js" : "<script src='https://kim-j-s.github.io/rpa/dist/js/moment.js'></script>\n<script src='https://kim-j-s.github.io/rpa/dist/js/moment-timezone-with-data.js'></script>",
-})
+<!DOCTYPE html class="msie">
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트 시간</title>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="../../assets/css/common.css">
+  <link rel='stylesheet' type='text/css' href='event3.css'>
+  <script src="../../js/libs/jquery-1.9.1.js"></script>
+  <script src="../../js/libs/swiper.min.js"></script>
+  <script src="../../js/libs/jquery.selectric.min.js"></script>
+  <script src="../../js/common_ui.js"></script>
+  <script src='https://kim-j-s.github.io/rpa/dist/js/moment.js'></script>
+<script src='https://kim-j-s.github.io/rpa/dist/js/moment-timezone-with-data.js'></script>
+</head>
 
 
   <body>
     <div id="wrap">
-      @@include("_header.html")
+      <!-- header -->
+<header>
+  header
+</header>
+<!-- header -->
 
       <!-- main -->
       <main class="container">
 
         <div class="content-inner">
 
-          <div class="frame" data-s="이벤트 시작일 : 2021-12-10" data-e="이벤트 종료일 : 2021-12-20">
+          <div class="frame" data-s="이벤트 시작일 : 2022-5-10" data-e="이벤트 종료일 : 2022-8-20">
             <span class="rtMark">
               <span class="remain">남은 시간 : <span class="rt"></span></span>
             </span>
@@ -40,7 +57,11 @@
       </main>
       <!-- main -->
 
-      @@include("_footer.html")
+      <!-- footer -->
+<footer>
+  footer
+</footer>
+<!-- footer -->
     </div>
 </body>
 
@@ -50,9 +71,9 @@
 
     // 년, 월, 일, 시, 분, 초를 받는다
     // 이벤트 종료일을 받는다.
-    eventTime = new Date(2022, 1, 20, 0, 0, 0, 0);
+    eventTime = new Date(2022, 05, 01, 0, 0, 0, 0);
     // 이벤트 시작일을 받는다
-    startTime = new Date(2021, 11, 10, 0, 0, 0, 0);
+    startTime = new Date(2022, 04, 31, 0, 0, 0, 0);
     // 현재 시간을 받는다
     currentTime = new Date();
 
