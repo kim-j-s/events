@@ -1,0 +1,78 @@
+@@include("_head.html",{
+  "title" : "전체동의",
+  "css" : "<link rel='stylesheet' type='text/css' href='event6.css'>",
+  "js" : "<script src='https://kim-j-s.github.io/rpa/dist/js/moment.js'></script>\n<script src='https://kim-j-s.github.io/rpa/dist/js/moment-timezone-with-data.js'></script>",
+})
+
+
+  <body>
+    <div id="wrap">
+      @@include("_header.html")
+
+      <!-- main -->
+      <main class="container">
+
+        <div class="chkall-group">
+          <div class="chkall-group-title">
+              <div class="chkbox">
+                  <label>
+                      <input type="checkbox" name="" id="" class="checkall">
+                      <span class="text">전체선택</span>
+                  </label>
+              </div>
+          </div>
+          <ul>
+              <li>
+                  <div class="chkbox">
+                      <label>
+                          <input type="checkbox" name="" id="">
+                          <span class="text">선택</span>
+                      </label>
+                  </div>
+              </li>
+              <li>
+                  <div class="chkbox">
+                      <label>
+                          <input type="checkbox" name="" id="">
+                          <span class="text">선택</span>
+                      </label>
+                  </div>
+              </li>
+          </ul>
+      </div>
+        
+
+
+        
+      </main>
+      <!-- main -->
+
+      @@include("_footer.html")
+    </div>
+</body>
+
+
+<script>
+
+function enableCheckAll(element) {
+  $(element).each(function(){
+    var $chkItems = $(this).find(':checkbox').not('.checkall');
+    $(this).find('.checkall').click(function() {
+      $chkItems.prop('checked', this.checked);
+    });
+    $chkItems.change(function() {
+      var numOfChecked = $chkItems.filter(':checked').length,
+        numOfCheckboxes = $chkItems.length,
+        isAllChecked = numOfChecked === numOfCheckboxes;
+      $(this).closest(element).find('.checkall').prop('checked', isAllChecked);
+    });
+  });
+}
+enableCheckAll('.chkall-group');
+
+</script>
+
+
+
+
+</html>

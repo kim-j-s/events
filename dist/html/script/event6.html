@@ -1,0 +1,99 @@
+<!DOCTYPE html class="msie">
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전체동의</title>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="../../assets/css/common.css">
+  <link rel='stylesheet' type='text/css' href='event6.css'>
+  <script src="../../js/libs/jquery-1.9.1.js"></script>
+  <script src="../../js/libs/swiper.min.js"></script>
+  <script src="../../js/libs/jquery.selectric.min.js"></script>
+  <script src="../../js/common_ui.js"></script>
+  <script src='https://kim-j-s.github.io/rpa/dist/js/moment.js'></script>
+<script src='https://kim-j-s.github.io/rpa/dist/js/moment-timezone-with-data.js'></script>
+</head>
+
+
+  <body>
+    <div id="wrap">
+      <!-- header -->
+<header>
+  header
+</header>
+<!-- header -->
+
+      <!-- main -->
+      <main class="container">
+
+        <div class="chkall-group">
+          <div class="chkall-group-title">
+              <div class="chkbox">
+                  <label>
+                      <input type="checkbox" name="" id="" class="checkall">
+                      <span class="text">전체선택</span>
+                  </label>
+              </div>
+          </div>
+          <ul>
+              <li>
+                  <div class="chkbox">
+                      <label>
+                          <input type="checkbox" name="" id="">
+                          <span class="text">선택</span>
+                      </label>
+                  </div>
+              </li>
+              <li>
+                  <div class="chkbox">
+                      <label>
+                          <input type="checkbox" name="" id="">
+                          <span class="text">선택</span>
+                      </label>
+                  </div>
+              </li>
+          </ul>
+      </div>
+        
+
+
+        
+      </main>
+      <!-- main -->
+
+      <!-- footer -->
+<footer>
+  footer
+</footer>
+<!-- footer -->
+    </div>
+</body>
+
+
+<script>
+
+function enableCheckAll(element) {
+  $(element).each(function(){
+    var $chkItems = $(this).find(':checkbox').not('.checkall');
+    $(this).find('.checkall').click(function() {
+      $chkItems.prop('checked', this.checked);
+    });
+    $chkItems.change(function() {
+      var numOfChecked = $chkItems.filter(':checked').length,
+        numOfCheckboxes = $chkItems.length,
+        isAllChecked = numOfChecked === numOfCheckboxes;
+      $(this).closest(element).find('.checkall').prop('checked', isAllChecked);
+    });
+  });
+}
+enableCheckAll('.chkall-group');
+
+</script>
+
+
+
+
+</html>
