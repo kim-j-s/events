@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>전체동의</title>
+  <title>전체동의 ?</title>
   <link rel="stylesheet" type="text/css" href="../../assets/css/reset.css">
   <link rel="stylesheet" type="text/css" href="../../assets/css/common.css">
   <link rel='stylesheet' type='text/css' href='event6.css'>
@@ -13,8 +13,7 @@
   <script src="../../js/libs/swiper.min.js"></script>
   <script src="../../js/libs/jquery.selectric.min.js"></script>
   <script src="../../js/common_ui.js"></script>
-  <script src='https://kim-j-s.github.io/rpa/dist/js/moment.js'></script>
-<script src='https://kim-j-s.github.io/rpa/dist/js/moment-timezone-with-data.js'></script>
+  <script src='http://code.jquery.com/jquery-latest.min.js'></script>
 </head>
 
 
@@ -29,34 +28,77 @@
       <!-- main -->
       <main class="container">
 
-        <div class="chkall-group">
-          <div class="chkall-group-title">
-              <div class="chkbox">
+        
+      <ul class="list">
+        <li class="item">
+          <label>
+            <input type="checkbox"/>1
+          </label>
+          <ul class="list">
+            <li class="item">
+              <label>
+                <input type="checkbox"/>1.1
+              </label>
+              <ul class="list">
+                <li class="item">
                   <label>
-                      <input type="checkbox" name="" id="" class="checkall">
-                      <span class="text">전체선택</span>
+                    <input type="checkbox"/>1.1.1
                   </label>
-              </div>
-          </div>
-          <ul>
-              <li>
-                  <div class="chkbox">
+                </li>
+                <li class="item">
+                  <label>
+                    <input type="checkbox"/>1.1.2
+                  </label>
+                </li>
+              </ul>
+            </li>
+            <li class="item">
+              <label>
+                <input type="checkbox"/>1.2
+              </label>
+            </li>
+            <li class="item">
+              <label>
+                <input type="checkbox"/>1.3
+              </label>
+              <ul class="list">
+                <li class="item">
+                  <label>
+                    <input type="checkbox"/>1.3.1
+                  </label>
+                </li>
+                <li class="item">
+                  <label>
+                    <input type="checkbox"/>1.3.2
+                  </label>
+                </li>
+                <li class="item">
+                  <label>
+                    <input type="checkbox"/>1.3.3
+                  </label>
+                </li>
+                <li class="item">
+                  <label>
+                    <input type="checkbox"/>1.3.4
+                  </label>
+                  <ul class="list">
+                    <li class="item">
                       <label>
-                          <input type="checkbox" name="" id="">
-                          <span class="text">선택</span>
+                        <input type="checkbox"/>1.3.4.1
                       </label>
-                  </div>
-              </li>
-              <li>
-                  <div class="chkbox">
-                      <label>
-                          <input type="checkbox" name="" id="">
-                          <span class="text">선택</span>
-                      </label>
-                  </div>
-              </li>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="item">
+              <label>
+                <input type="checkbox"/>1.4
+              </label>
+            </li>
           </ul>
-      </div>
+        </li>
+      </ul>
         
 
 
@@ -75,21 +117,71 @@
 
 <script>
 
-function enableCheckAll(element) {
-  $(element).each(function(){
-    var $chkItems = $(this).find(':checkbox').not('.checkall');
-    $(this).find('.checkall').click(function() {
-      $chkItems.prop('checked', this.checked);
-    });
-    $chkItems.change(function() {
-      var numOfChecked = $chkItems.filter(':checked').length,
-        numOfCheckboxes = $chkItems.length,
-        isAllChecked = numOfChecked === numOfCheckboxes;
-      $(this).closest(element).find('.checkall').prop('checked', isAllChecked);
-    });
+const item = ".item";
+const list = ".list";
+
+const check = function (el) {
+  const $this = $(el);
+  checkChildren($this);
+  checkParent($this);
+};
+
+const checkChildren = (el) => {
+  const $this = $(el);
+  const $child = $this.closest(item).children(list).find("input");
+  const isCurrentCheck = $this.is(":checked");
+  if (isCurrentCheck) {
+    $child.prop("checked", true);
+  } else {
+    $child.prop("checked", false);
+  }
+};
+
+const checkParent = (el) => {
+  const $this = $(el);
+  const $parent = $this
+    .closest(list)
+    .parents(item)
+    .children("label")
+    .children("input");
+  $.makeArray($parent).map((parent) => checkSelf(parent));
+};
+
+const checkSelf = (el) => {
+  const $this = $(el);
+  const $children = $this
+    .closest(item)
+    .children(list)
+    .children(item)
+    .children("label")
+    .children("input"); // Direct children
+  const isAllChildrenChecked = $.makeArray($children).every((child) =>
+    $(child).is(":checked")
+  );
+  const isSomeChildrenChecked = $.makeArray($children).some(
+    (child) => $(child).is(":checked") || $(child).is(":indeterminate")
+  );
+
+  if (isAllChildrenChecked) {
+    $this.prop("checked", true);
+  } else {
+    $this.prop("checked", false);
+  }
+
+  if (isSomeChildrenChecked && !isAllChildrenChecked) {
+    $this.prop("indeterminate", true);
+  } else {
+    $this.prop("indeterminate", false);
+  }
+};
+
+$(document).ready(function () {
+  const $checkbox = $("input[type=checkbox]");
+  $checkbox.on("change", function () {
+    check(this);
   });
-}
-enableCheckAll('.chkall-group');
+});
+
 
 </script>
 
