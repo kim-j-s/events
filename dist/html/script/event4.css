@@ -1,0 +1,44 @@
+.time-event + .time-event {
+  margin-top: 20px;
+}
+
+.remain-timer {
+  display: inline-block;
+  padding: 50px;
+  font-size: 0;
+  white-space: nowrap;
+  background-color: green;
+}
+
+.remain-dp {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 80px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.remain-dp + .remain-dp {
+  margin-left: 33px;
+}
+
+.remain-dp + .remain-dp::before {
+  content: ':';
+  position: absolute;
+  top: 50%;
+  left: -33px;
+  width: 33px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 80px;
+  color: #fff;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}

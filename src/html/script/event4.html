@@ -1,0 +1,101 @@
+@@include("_head.html",{
+  "title" : "이벤트 시간",
+  "css" : "<link rel='stylesheet' type='text/css' href='event4.css'>",
+  "js" : "<script src='https://kim-j-s.github.io/rpa/dist/js/moment.js'></script>\n<script src='https://kim-j-s.github.io/rpa/dist/js/moment-timezone-with-data.js'></script>",
+})
+
+
+  <body>
+    <div id="wrap">
+      @@include("_header.html")
+
+      <!-- main -->
+      <main class="container">
+
+        <div class="content-inner">
+
+          <div class="time-event">
+            <div class="remain-event">
+              <div class="remain-timer" data-event-end="2022-08-31 23:59:59">
+                <span class="remain-dp hours">0</span>
+                <span class="remain-dp minutes">0</span>
+                <span class="remain-dp seconds">0</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="time-event">
+            <div class="remain-event">
+              <div class="remain-timer" data-event-end="2022-09-01 23:59:59">
+                <span class="remain-dp hours">0</span>
+                <span class="remain-dp minutes">0</span>
+                <span class="remain-dp seconds">0</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="time-event">
+            <div class="remain-event">
+              <div class="remain-timer" data-event-end="2022-09-02 23:59:59">
+                <span class="remain-dp hours">0</span>
+                <span class="remain-dp minutes">0</span>
+                <span class="remain-dp seconds">0</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+      <!-- main -->
+
+      @@include("_footer.html")
+    </div>
+</body>
+
+
+<script>
+  function timer(end) {
+
+    // 이벤트 종료일을 받는다.
+    var endTime = new Date(end);
+
+    // 오늘 날짜를 받는다.
+    var currentTime = new Date();
+
+    // 이벤트 잔여시간
+    var eventLeft = endTime - currentTime;
+
+    // 잔류 기간
+    //var hours = Math.floor((eventLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var hours = Math.floor(eventLeft / (1000 * 60 * 60));
+    var minutes = Math.floor((eventLeft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((eventLeft % (1000 * 60)) / 1000);
+
+    return {
+        hour: hours,
+        minute: minutes,
+        second: seconds
+    };
+
+  };
+
+  function timeEvent() {
+    $('.remain-timer').each(function(){
+      var endDates = $(this).data('event-end').split("-").join('/');
+      var timeEvent = timer(endDates);
+      $(this).find('.hours').text(timeEvent.hour);
+      $(this).find('.minutes').text(timeEvent.minute);
+      $(this).find('.seconds').text(timeEvent.second);
+    });
+  }
+
+  $(function() {
+    timeEvent();
+    setInterval(timeEvent, 1000);
+  });
+</script>
+
+
+
+
+</html>
