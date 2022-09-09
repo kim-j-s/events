@@ -1,0 +1,53 @@
+.effect-cont {
+	position: relative;
+	font-size: 0;
+	margin: 30px;
+	padding: 30px;
+}
+
+.origin {
+
+}
+
+.effect {
+	position: absolute;
+	top: 0;
+	left: 0;
+	mix-blend-mode: exclusion;
+	.cover {
+		position: absolute;
+		top: 0;
+		left: 0;
+		inset: 0;
+		filter: saturate(10);
+		&.aa {
+			z-index: 2;
+			/* opacity: 0; */
+			clip-path: inset(60% 0px 35px);
+			clip-path: inset(20% 0px 35px);
+			transform: translate(0px, 0px);
+			/* animation: efc 3s infinite alternate forwards; */
+		}
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transform-origin: 50% 50%;
+			transform: translate(-22.2582%, 0%) scale(1.2321, 1.23207);
+		}
+	}
+}
+
+
+@keyframes efc {
+	0% {
+		opacity: 0;
+		transform: translate(0px, 0px);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0px, 0px);
+	}
+}
+	
