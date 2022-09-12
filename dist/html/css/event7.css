@@ -1,0 +1,22 @@
+.dom {
+  position: relative;
+  height: 32px;
+  overflow: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.dom::-webkit-scrollbar {
+  display: none;
+}
+
+.dom.active {
+  height: auto;
+  white-space: initial;
+}
+
+.inner a {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px 10px 0 0;
+}
