@@ -23,12 +23,10 @@
   margin-left: 50px;
   background: blue;
 }
-
 .move.top {
   position: fixed;
   right: auto;
 }
-
 .move.bottom {
   position: absolute;
   bottom: 0;

@@ -9,7 +9,6 @@
   white-space: nowrap;
   background-color: green;
 }
-
 .remain-dp {
   position: relative;
   display: inline-block;
@@ -22,13 +21,11 @@
   border-radius: 50%;
   background-color: #fff;
 }
-
 .remain-dp + .remain-dp {
   margin-left: 33px;
 }
-
 .remain-dp + .remain-dp::before {
-  content: ':';
+  content: ":";
   position: absolute;
   top: 50%;
   left: -33px;

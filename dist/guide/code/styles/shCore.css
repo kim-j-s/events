@@ -54,18 +54,14 @@
   font-weight: normal !important;
   font-style: normal !important;
   font-size: 1em !important;
-  min-height: inherit !important;
-  /* For IE8, FF & WebKit */
-  min-height: auto !important;
-  /* For IE7 */
+  min-height: inherit !important; /* For IE8, FF & WebKit */
+  min-height: auto !important; /* For IE7 */
 }
 
 .syntaxhighlighter {
-  width: 99% !important;
-  /* 99% fixes IE8 horizontal scrollbar */
+  width: 99% !important; /* 99% fixes IE8 horizontal scrollbar */
   margin: 1em 0 1em 0 !important;
-  padding: 1px !important;
-  /* adds a little border on top and bottom */
+  padding: 1px !important; /* adds a little border on top and bottom */
   position: relative !important;
 }
 
@@ -95,13 +91,13 @@
 
 .syntaxhighlighter .line .number code {
   width: 2.7em !important;
-  padding-right: .3em !important;
+  padding-right: 0.3em !important;
   text-align: right !important;
   display: block !important;
 }
 
 .syntaxhighlighter .line .content {
-  padding-left: .5em !important;
+  padding-left: 0.5em !important;
 }
 
 /* Disable border and margin on the lines when no gutter option is set */
@@ -137,13 +133,12 @@
   right: 0px !important;
   top: 0px !important;
   font-size: 1px !important;
-  padding: 8px 8px 8px 0 !important;
-  /* in px because images don't scale with ems */
+  padding: 8px 8px 8px 0 !important; /* in px because images don't scale with ems */
 }
 
 .syntaxhighlighter.collapsed .toolbar {
   font-size: 80% !important;
-  padding: .2em 0 .5em .5em !important;
+  padding: 0.2em 0 0.5em 0.5em !important;
   position: static !important;
 }
 

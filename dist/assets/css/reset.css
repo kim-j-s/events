@@ -47,7 +47,7 @@ html {
 
 body {
   position: relative;
-  font-family: 'HelveticaNeue', 'Noto Sans Kr', sans-serif;
+  font-family: "HelveticaNeue", "Noto Sans Kr", sans-serif;
   word-break: keep-all;
   word-wrap: break-word;
 }
@@ -62,7 +62,7 @@ blockquote, q {
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: '';
+  content: "";
   content: none;
 }
 

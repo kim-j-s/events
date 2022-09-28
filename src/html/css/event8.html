@@ -1,0 +1,38 @@
+@@include("_head.html",{
+  "title" : "Event | HOME",
+  "css" : "<link rel='stylesheet' type='text/css' href='event8.css'>",
+  "js" : "",
+})
+  <body>
+    <div id="wrap">
+      @@include("_header.html")
+
+      <!-- main -->
+      <main class="container">
+        <div class="cont">1</div>
+        <div class="cont">2</div>
+        <div class="cont">3</div>
+        <div class="cont">4</div>
+        <div class="cont">5</div>
+        <div class="cont">6</div>
+        <div class="cont">7</div>
+        <div class="cont">8</div>
+        <div class="cont">9</div>
+        <div class="cont">10</div>
+      </main>
+      <!-- main -->
+      <div class="btn_area">
+        <button class="btnbtn">고정버튼</button>
+      </div>
+    </div>
+
+
+<script>
+  $('body').on('click', function(){
+    $('.dom').toggleClass('active');
+  })
+</script>
+
+
+</body>
+</html>

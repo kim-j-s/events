@@ -33,7 +33,6 @@ body {
   border-radius: 10px;
   background: #202020;
 }
-
 .wave-box--effect {
   position: relative;
   display: inline-block;
@@ -41,13 +40,11 @@ body {
   width: 100px;
   overflow: hidden;
 }
-
 .wave-box--effect::after {
-  content: '';
+  content: "";
   display: block;
   padding-bottom: 100%;
 }
-
 .wave-box--effect > .wave {
   position: absolute;
   top: 0;
@@ -56,9 +53,8 @@ body {
   height: 100%;
   overflow: hidden;
 }
-
 .wave-box--effect > .wave::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -68,7 +64,6 @@ body {
   -webkit-box-shadow: 0 0 0 1000px #202020;
           box-shadow: 0 0 0 1000px #202020;
 }
-
 .wave-box--effect > .wave .waves {
   position: absolute;
   top: 0;
@@ -81,7 +76,6 @@ body {
   -webkit-transition: 1.5s;
   transition: 1.5s;
 }
-
 .wave-box--effect > .wave .waves-f {
   z-index: 1;
   border-radius: 45%;
@@ -89,7 +83,6 @@ body {
   -webkit-animation: wave 20s linear infinite forwards;
           animation: wave 20s linear infinite forwards;
 }
-
 .wave-box--effect > .wave .waves-b {
   border-radius: 35%;
   background: #202020;
@@ -97,35 +90,30 @@ body {
   -webkit-animation: wave 20s linear infinite forwards;
           animation: wave 20s linear infinite forwards;
 }
-
 .wave-box--effect > .wave.type1 {
-  background: #5aad8b;
-  background: -webkit-gradient(linear, left bottom, left top, from(#5aad8b), to(#f2f2f2));
-  background: -webkit-linear-gradient(bottom, #5aad8b 0%, #f2f2f2 100%);
-  background: linear-gradient(0deg, #5aad8b 0%, #f2f2f2 100%);
+  background: rgb(90, 173, 139);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgb(90, 173, 139)), to(rgb(242, 242, 242)));
+  background: -webkit-linear-gradient(bottom, rgb(90, 173, 139) 0%, rgb(242, 242, 242) 100%);
+  background: linear-gradient(0deg, rgb(90, 173, 139) 0%, rgb(242, 242, 242) 100%);
 }
-
 .wave-box--effect > .wave.type2 {
-  background: #ae9a37;
-  background: -webkit-gradient(linear, left bottom, left top, from(#ae9a37), to(#f2f2f2));
-  background: -webkit-linear-gradient(bottom, #ae9a37 0%, #f2f2f2 100%);
-  background: linear-gradient(0deg, #ae9a37 0%, #f2f2f2 100%);
+  background: rgb(174, 154, 55);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgb(174, 154, 55)), to(rgb(242, 242, 242)));
+  background: -webkit-linear-gradient(bottom, rgb(174, 154, 55) 0%, rgb(242, 242, 242) 100%);
+  background: linear-gradient(0deg, rgb(174, 154, 55) 0%, rgb(242, 242, 242) 100%);
 }
-
 .wave-box--effect > .wave.type3 {
-  background: #3434ae;
-  background: -webkit-gradient(linear, left bottom, left top, from(#3434ae), to(#f2f2f2));
-  background: -webkit-linear-gradient(bottom, #3434ae 0%, #f2f2f2 100%);
-  background: linear-gradient(0deg, #3434ae 0%, #f2f2f2 100%);
+  background: rgb(52, 52, 174);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgb(52, 52, 174)), to(rgb(242, 242, 242)));
+  background: -webkit-linear-gradient(bottom, rgb(52, 52, 174) 0%, rgb(242, 242, 242) 100%);
+  background: linear-gradient(0deg, rgb(52, 52, 174) 0%, rgb(242, 242, 242) 100%);
 }
-
 .wave-box--effect > .wave.type4 {
-  background: #a7448b;
-  background: -webkit-gradient(linear, left bottom, left top, from(#a7448b), to(#f2f2f2));
-  background: -webkit-linear-gradient(bottom, #a7448b 0%, #f2f2f2 100%);
-  background: linear-gradient(0deg, #a7448b 0%, #f2f2f2 100%);
+  background: rgb(167, 68, 139);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgb(167, 68, 139)), to(rgb(242, 242, 242)));
+  background: -webkit-linear-gradient(bottom, rgb(167, 68, 139) 0%, rgb(242, 242, 242) 100%);
+  background: linear-gradient(0deg, rgb(167, 68, 139) 0%, rgb(242, 242, 242) 100%);
 }
-
 .wave-box--effect > .per {
   position: absolute;
   top: 50%;
@@ -136,7 +124,6 @@ body {
           transform: translate(-50%, -50%);
   color: #fff;
 }
-
 .wave-box > p {
   display: inline-block;
   vertical-align: middle;
