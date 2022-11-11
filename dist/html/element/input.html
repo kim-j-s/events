@@ -8,7 +8,7 @@
   <title>Event | HOME</title>
   <link rel="stylesheet" type="text/css" href="../../assets/css/reset.css">
   <link rel="stylesheet" type="text/css" href="../../assets/css/common.css">
-  <link rel='stylesheet' type='text/css' href='event7.css'>
+  <link rel='stylesheet' type='text/css' href='input.css'>
   <script src="../../js/libs/jquery-1.9.1.js"></script>
   <script src="../../js/libs/swiper.min.js"></script>
   <script src="../../js/libs/jquery.selectric.min.js"></script>
@@ -26,12 +26,26 @@
       <!-- main -->
       <main class="container">
 
+        <h3 class="guide-title">
+          Input - del [ pure css ] - placeholder가 존재하는 조건으로 행해진다.
+        </h3>
+        <div class="guide-dom">
 
-        <div class="dom">
-          <div class="inner">
-            <a href="">Item 01</a><a href="">Item 02</a><a href="">Item 03</a><a href="">Item 04</a><a href="">Item 05</a><a href="">Item 06</a><a href="">Item 07</a><a href="">Item 08</a><a href="">Item 09</a><a href="">Item 10</a><a href="">Item 11</a><a href="">Item 12</a><a href="">Item 13</a><a href="">Item 14</a><a href="">Item 15</a><a href="">Item 16</a><a href="">Item 17</a><a href="">Item 18</a><a href="">Item 19</a><a href="">Item 20</a><a href="">Item 21</a><a href="">Item 22</a><a href="">Item 23</a><a href="">Item 24</a><a href="">Item 25</a><a href="">Item 26</a><a href="">Item 27</a><a href="">Item 28</a><a href="">Item 29</a><a href="">Item 30</a>
+          <div class="input">
+            <input type="text" name="" id="" class="inp" placeholder="문구">
+            <button type="button" class="inp-del">삭제</button>
           </div>
+
         </div>
+
+        <script>
+
+          $('.inp-del').on('click', function(){
+            $(this).prev('.inp').val('');
+            $(this).blur();
+          })
+
+        </script>
 
         
 
@@ -41,9 +55,7 @@
 
 
 <script>
-  $('body').on('click', function(){
-    $('.dom').toggleClass('active');
-  })
+  // script
 </script>
 
 

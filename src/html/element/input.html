@@ -1,0 +1,47 @@
+@@include("_head.html",{
+  "title" : "Event | HOME",
+  "css" : "<link rel='stylesheet' type='text/css' href='input.css'>",
+  "js" : "",
+})
+  <body>
+    <div id="wrap">
+      @@include("_header.html")
+
+      <!-- main -->
+      <main class="container">
+
+        <h3 class="guide-title">
+          Input - del [ pure css ] - placeholder가 존재하는 조건으로 행해진다.
+        </h3>
+        <div class="guide-dom">
+
+          <div class="input">
+            <input type="text" name="" id="" class="inp" placeholder="문구">
+            <button type="button" class="inp-del">삭제</button>
+          </div>
+
+        </div>
+
+        <script>
+
+          $('.inp-del').on('click', function(){
+            $(this).prev('.inp').val('');
+            $(this).blur();
+          })
+
+        </script>
+
+        
+
+      </main>
+      <!-- main -->
+    </div>
+
+
+<script>
+  // script
+</script>
+
+
+</body>
+</html>
